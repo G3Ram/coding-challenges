@@ -17,3 +17,24 @@ Input: nums1 = [1,2,3,6], nums2 = [2,3,4,5]
 Output: 2
 Explanation: There are two common elements in the array 2 and 3 out of which 2 is the smallest, so 2 is returned.
 """
+
+# Solution
+
+
+def getCommon(nums1: list[int], nums2: list[int]) -> int:
+    i, j = 0, 0
+    while i < len(nums1) and j < len(nums2):
+        if nums1[i] == nums2[j]:
+            return nums1[i]
+        elif nums1[i] < nums2[j]:
+            i += 1
+        else:
+            j += 1
+    
+    return -1
+
+
+if __name__ == "__main__":
+    print(getCommon([1, 2, 3], [2, 4]))        # expected: 2
+    print(getCommon([1, 2, 3, 6], [2, 3, 4, 5]))  # expected: 2
+    print(getCommon([1, 3, 5], [2, 4, 6]))     # expected: -1

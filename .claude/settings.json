@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(mkdir -p \"/Users/gayathriramakrishnan/Documents/Interview Prep/Coding Challenges/practice/coding-challenges/.vscode\")"
+    ],
+    "additionalDirectories": [
+      "/Users/gayathriramakrishnan/Documents/Interview Prep/Coding Challenges/practice/coding-challenges"
+    ]
+  }
+}
