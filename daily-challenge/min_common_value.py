@@ -24,8 +24,19 @@ Explanation: There are two common elements in the array 2 and 3 out of which 2 i
 def getCommon(nums1: list[int], nums2: list[int]) -> int:
     if not nums1 or not nums2:
         return -1
-    common = set(nums1) & set(nums2)
-    return min(common) if common else -1
+    if nums1[-1] < nums2[0] or nums2[-1] < nums1[0]:
+        return -1
+    n1 = len(nums1)
+    n2 = len(nums2)
+    i = j = 0
+    while i < n1 and j < n2:
+        if nums1[i] == nums2[j]:
+            return nums1[i]
+        elif nums1[i] < nums2[j]:
+            i += 1
+        else:
+            j += 1
+    return -1
 
 
 if __name__ == "__main__":
